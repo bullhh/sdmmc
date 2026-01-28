@@ -194,10 +194,7 @@ impl EMmcHost {
 
             #[cfg(feature = "pio")]
             {
-                self.write_reg16(
-                    EMMC_BLOCK_SIZE,
-                    cmd.block_size & 0xFFF,
-                );
+                self.write_reg16(EMMC_BLOCK_SIZE, cmd.block_size & 0xFFF);
                 self.write_reg16(EMMC_BLOCK_COUNT, cmd.block_count);
 
                 self.write_reg16(EMMC_XFER_MODE, mode);
